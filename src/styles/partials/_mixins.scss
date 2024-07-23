@@ -1,0 +1,123 @@
+@use "../partials/text" as *;
+
+@mixin mobile-small {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mobile-medium {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mobile-large {
+  @media (min-width: 414px) {
+    @content;
+  }
+}
+
+// tablets
+@mixin tablet-small {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-medium {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-large {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+//desktop
+@mixin desktop-small {
+  @media (min-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin desktop-medium {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+// typography mixins:
+
+// mobile
+@mixin m-h2 {
+  font-size: 28px;
+  font-weight: medium;
+}
+
+@mixin m-h3 {
+  font-size: 20px;
+  font-weight: medium;
+}
+
+@mixin mp-1 {
+  font-size: 9px;
+  font-weight: bold;
+}
+
+@mixin mp-2 {
+  font-size: 11px;
+  font-weight: normal;
+}
+
+// tablet font mixins
+@mixin t-p1 {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+@mixin t-h2 {
+  font-size: 48px;
+  font-weight: medium;
+}
+
+@mixin t-h3 {
+  font-size: 24px;
+  font-weight: medium;
+}
+
+// desktop
+
+@mixin d-h1 {
+  font-size: 80px;
+  font-weight: medium;
+}
+
+@mixin d-h2 {
+  font-size: 40px;
+  font-weight: medium;
+}
+
+@mixin d-p1 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+@mixin d-p2 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@mixin d-p3 {
+  font-size: 11px;
+  font-weight: bold;
+}
