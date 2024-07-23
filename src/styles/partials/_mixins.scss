@@ -1,3 +1,5 @@
+@use "../partials/text" as *;
+
 @mixin mobile-small {
   @media (min-width: 320px) {
     @content;
