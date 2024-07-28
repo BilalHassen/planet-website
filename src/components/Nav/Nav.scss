@@ -1,0 +1,34 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/text" as *;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid $grey;
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 2.8rem;
+  }
+
+  &__burger {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  &__burger-icon {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__rotate {
+    transform: rotate(90deg);
+  }
+}
+
+.burger-icon {
+  height: 25px;
+  width: 25px;
+}

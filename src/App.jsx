@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/Nav";
 
 function App() {
   return (

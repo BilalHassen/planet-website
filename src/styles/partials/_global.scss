@@ -65,11 +65,16 @@ table {
 
 /* Reset font sizes and line heights */
 body {
-  font-size: 100%; /* Ensure font size is consistent across browsers */
   line-height: 1.5;
   height: 100vh;
-  background-image: url(../../../public/images/background-stars.svg);
-  background-size: cover;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  background-color: $dark;
+  color: white;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 /* Ensure images and media are responsive */
