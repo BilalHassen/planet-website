@@ -26,9 +26,9 @@
   &__rotate {
     transform: rotate(90deg);
   }
-}
 
-.burger-icon {
-  height: 25px;
-  width: 25px;
+  &__burger-icon {
+    height: 25px;
+    width: 25px;
+  }
 }

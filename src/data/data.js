@@ -221,3 +221,5 @@ const planetData = [
     },
   ],
 ];
+
+export default planetData;
