@@ -1,15 +1,22 @@
 import "./NavMenu.scss";
+import earth from "../../../public/images/planet-earth.svg";
+import arrow from "../../../public/images/icon-chevron.svg";
 
-export default function NavMenu({ images }) {
-  console.log(images.geology);
+export default function NavMenu({ data }) {
+  console.log(typeof data.color);
   return (
     <>
       <div className="nav__menu">
-        <img
-          className="nav__planet-icon"
-          src={images.geology}
-          alt="planet-icon"
-        ></img>
+        <div className="nav__icon-name">
+          <div
+            className="nav__planet-icon"
+            style={{
+              backgroundColor: data.color, // Set the background color here
+            }}
+          ></div>
+          <h2 className="nav__planet-name">{data.name}</h2>
+        </div>
+        <img className="nav__arrow-icon" src={arrow} alt="arrow"></img>
       </div>
     </>
   );

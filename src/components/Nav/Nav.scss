@@ -2,13 +2,22 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/text" as *;
+
+body {
+  position: relative;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
+  margin-bottom: 2rem;
+
   border-bottom: 1px solid $grey;
+  position: relative;
+  z-index: 99;
 
   &__title {
     text-transform: uppercase;
@@ -31,4 +40,27 @@
     height: 25px;
     width: 25px;
   }
+
+  &__menu-wrapper {
+    height: 100vh;
+    opacity: 0;
+    position: absolute; //  absolute to ensure it can stack above other content
+    top: 18%; // Position it just below the nav
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    transition: opacity 0.7s ease-in-out; // Apply transition to height and opacity
+    z-index: 1000; // Ensure it stacks above other elements
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    background-color: $dark;
+  }
+
+  &__menu-wrapper.open {
+    opacity: 1;
+  }
+}
+
+.nav__menu:last-child {
+  border-bottom: none;
 }

@@ -7,6 +7,7 @@ const planetData = [
           "Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.",
         source: "https://en.wikipedia.org/wiki/Mercury_(planet)",
       },
+      color: "#ffffff",
       structure: {
         content:
           "Mercury appears to have a solid silicate crust and mantle overlying a solid, iron sulfide outer core layer, a deeper liquid core layer, and a solid inner core. The planet's density is the second highest in the Solar System at 5.427 g/cm3 , only slightly less than Earth's density.",
@@ -24,9 +25,9 @@ const planetData = [
       radius: "2,439.7 KM",
       temperature: "430°c",
       images: {
-        planet: "./assets/planet-mercury.svg",
-        internal: "./assets/planet-mercury-internal.svg",
-        geology: "./assets/geology-mercury.png",
+        planet: "/images/planet-mercury.svg",
+        internal: "/images/planet-mercury-internal.svg",
+        geology: "/images/geology-mercury.png",
       },
     },
     {
@@ -36,6 +37,7 @@ const planetData = [
           "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the brightest natural object in Earth's night sky after the Moon, Venus can cast shadows and can be, on rare occasions, visible to the naked eye in broad daylight.",
         source: "https://en.wikipedia.org/wiki/Venus",
       },
+      color: "#F7CC7F",
       structure: {
         content:
           "The similarity in size and density between Venus and Earth suggests they share a similar internal structure: a core, mantle, and crust. Like that of Earth, Venusian core is most likely at least partially liquid because the two planets have been cooling at about the same rate.",
@@ -51,9 +53,9 @@ const planetData = [
       radius: "6,051.8 KM",
       temperature: "471°c",
       images: {
-        planet: "./assets/planet-venus.svg",
-        internal: "./assets/planet-venus-internal.svg",
-        geology: "./assets/geology-venus.png",
+        planet: "/images/planet-venus.svg",
+        internal: "/images/planet-venus-internal.svg",
+        geology: "/images/geology-venus.png",
       },
     },
     {
@@ -63,6 +65,7 @@ const planetData = [
           "Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.",
         source: "https://en.wikipedia.org/wiki/Earth",
       },
+      color: "#545BFE",
       structure: {
         content:
           "Earth's interior, like that of the other terrestrial planets, is divided into layers by their chemical or physical (rheological) properties. The outer layer is a chemically distinct silicate solid crust, which is underlain by a highly viscous solid mantle.",
@@ -78,9 +81,9 @@ const planetData = [
       radius: "6,371 KM",
       temperature: "16°c",
       images: {
-        planet: "./assets/planet-earth.svg",
-        internal: "./assets/planet-earth-internal.svg",
-        geology: "./assets/geology-earth.png",
+        planet: "/images/planet-earth.svg",
+        internal: "/images/planet-earth-internal.svg",
+        geology: "/images/geology-earth.png",
       },
     },
     {
@@ -90,6 +93,7 @@ const planetData = [
           'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the "Red Planet".',
         source: "https://en.wikipedia.org/wiki/Mars",
       },
+      color: "#FF6A45",
       structure: {
         content:
           "Like Earth, Mars has differentiated into a dense metallic core overlaid by less dense materials. Scientists initially determined that the core is at least partially liquid. Current models of its interior imply a core consisting primarily of iron and nickel with about 16–17% sulfur.",
@@ -105,9 +109,9 @@ const planetData = [
       radius: "3,389.5 KM",
       temperature: "-28°c",
       images: {
-        planet: "./assets/planet-mars.svg",
-        internal: "./assets/planet-mars-internal.svg",
-        geology: "./assets/geology-mars.png",
+        planet: "/images/planet-mars.svg",
+        internal: "/images/planet-mars-internal.svg",
+        geology: "/images/geology-mars.png",
       },
     },
     {
@@ -117,6 +121,7 @@ const planetData = [
           "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass two and a half times that of all the other planets in the Solar System combined, but less than one-thousandth the mass of the Sun.",
         source: "https://en.wikipedia.org/wiki/Jupiter",
       },
+      color: "#ECAD7A",
       structure: {
         content:
           "When the Juno arrived in 2016, it found that Jupiter has a very diffuse core that mixes into its mantle. A possible cause is an impact from a planet of about ten Earth masses a few million years after Jupiter's formation, which would have disrupted an originally solid Jovian core.",
@@ -133,9 +138,9 @@ const planetData = [
       radius: "69,911 KM",
       temperature: "-108°c",
       images: {
-        planet: "./assets/planet-jupiter.svg",
-        internal: "./assets/planet-jupiter-internal.svg",
-        geology: "./assets/geology-jupiter.png",
+        planet: "/images/planet-jupiter.svg",
+        internal: "/images/planet-jupiter-internal.svg",
+        geology: "/images/geology-jupiter.png",
       },
     },
     {
@@ -145,6 +150,7 @@ const planetData = [
           "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine and a half times that of Earth. It only has one-eighth the average density of Earth.",
         source: "https://en.wikipedia.org/wiki/Saturn",
       },
+      color: "#FCCB6B",
       structure: {
         content:
           "Despite consisting mostly of hydrogen and helium, most of Saturn's mass is not in the gas phase, because hydrogen becomes a non-ideal liquid when the density is above 0.01 g/cm3, which is reached at a radius containing 99.9% of Saturn's mass.",
@@ -160,26 +166,27 @@ const planetData = [
       radius: "58,232 KM",
       temperature: "-138°c",
       images: {
-        planet: "./assets/planet-saturn.svg",
-        internal: "./assets/planet-saturn-internal.svg",
-        geology: "./assets/geology-saturn.png",
+        planet: "/images/planet-saturn.svg",
+        internal: "/images/planet-saturn-internal.svg",
+        geology: "/images/geology-saturn.png",
       },
     },
     {
       name: "Uranus",
       overview: {
         content:
-          "Uranus is the seventh planet from the Sun. Its name is a reference to the Greek god of the sky, Uranus according to Greek mythology, was the great-grandfather of Ares. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
+          "Uranus is the seventh planet from the Sun. Its name is a reference to the Greek god of the sky, Uranus. According to Greek mythology, Uranus was the grandfather of Zeus (Jupiter) and father of Cronus (Saturn). It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
         source: "https://en.wikipedia.org/wiki/Uranus",
       },
+      color: "#65F0D5",
       structure: {
         content:
-          "The standard model of Uranus's structure is that it consists of three layers: a rocky (silicate/iron–nickel) core in the centre, an icy mantle in the middle and an outer gaseous hydrogen/helium envelope. The core is relatively small, with a mass of only 0.55 Earth masses.",
+          "Uranus's internal structure is similar to Neptune's. Its atmosphere is composed primarily of hydrogen and helium, along with a relatively higher proportion of 'ices' such as water, ammonia, and methane, along with traces of other hydrocarbons.",
         source: "https://en.wikipedia.org/wiki/Uranus#Internal_structure",
       },
       geology: {
         content:
-          "The composition of Uranus's atmosphere is different from its bulk, consisting mainly of molecular hydrogen and helium. The helium molar fraction, i.e. the number of helium atoms per molecule of gas, is 0.15±0.03 in the upper troposphere.",
+          "The composition of Uranus's atmosphere is different from its bulk, consisting primarily of hydrogen and helium. The helium molar fraction, i.e. the number of helium atoms per molecule of gas, is 0.15 ± 0.03 in the upper troposphere.",
         source: "https://en.wikipedia.org/wiki/Uranus#Atmosphere",
       },
       rotation: "17.2 Hours",
@@ -187,21 +194,22 @@ const planetData = [
       radius: "25,362 KM",
       temperature: "-195°c",
       images: {
-        planet: "./assets/planet-uranus.svg",
-        internal: "./assets/planet-uranus-internal.svg",
-        geology: "./assets/geology-uranus.png",
+        planet: "/images/planet-uranus.svg",
+        internal: "/images/planet-uranus-internal.svg",
+        geology: "/images/geology-uranus.png",
       },
     },
     {
       name: "Neptune",
       overview: {
         content:
-          "Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, more massive than its near-twin Uranus.",
+          "Neptune is the eighth and farthest planet from the Sun in the Solar System. It is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, slightly more massive than its near-twin Uranus.",
         source: "https://en.wikipedia.org/wiki/Neptune",
       },
+      color: "#497EFA",
       structure: {
         content:
-          "Neptune's internal structure resembles that of Uranus. Its atmosphere forms about 5% to 10% of its mass and extends perhaps 10% to 20% of the way towards the core. Increasing concentrations of methane, ammonia and water are found in the lower regions.",
+          "Neptune's internal structure resembles that of Uranus. Its atmosphere forms about 5% to 10% of its mass and extends perhaps 10% to 20% of the way towards the core, where it reaches pressures of about 10 GPa, or about 100,000 times that of Earth's atmosphere.",
         source: "https://en.wikipedia.org/wiki/Neptune#Internal_structure",
       },
       geology: {
@@ -214,9 +222,9 @@ const planetData = [
       radius: "24,622 KM",
       temperature: "-201°c",
       images: {
-        planet: "./assets/planet-neptune.svg",
-        internal: "./assets/planet-neptune-internal.svg",
-        geology: "./assets/geology-neptune.png",
+        planet: "/images/planet-neptune.svg",
+        internal: "/images/planet-neptune-internal.svg",
+        geology: "/images/geology-neptune.png",
       },
     },
   ],

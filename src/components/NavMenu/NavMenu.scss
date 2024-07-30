@@ -1,0 +1,34 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.nav {
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.1px solid $grey;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  &__icon-name {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__arrow-icon {
+    height: 15px;
+    width: 15px;
+  }
+
+  &__planet-icon {
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+  }
+
+  &__planet-name {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
+}

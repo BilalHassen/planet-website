@@ -31,11 +31,15 @@ export default function Nav() {
         </div>
       </nav>
 
-      {isActive
-        ? planetData[0].map((data) => {
-            return <NavMenu key={data.index} images={data.images} />;
-          })
-        : null}
+      <div className={`nav__menu-wrapper ${isActive ? "open" : "close"}`}>
+        {isActive
+          ? planetData[0].map((data) => {
+              return (
+                <NavMenu key={data.index} images={data.images} data={data} />
+              );
+            })
+          : null}
+      </div>
     </>
   );
 }
