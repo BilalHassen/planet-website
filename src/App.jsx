@@ -6,14 +6,15 @@ function App() {
   return (
     <>
       <Nav />
-
-      <h1>VENUS</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, sint
-        esse. Enim dignissimos quasi est molestias animi, ipsum veniam
-        voluptatum tenetur amet placeat adipisci cupiditate, architecto sit iste
-        debitis! Blanditiis?
-      </p>
+      <div className="wrapper">
+        <h1>VENUS</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, sint
+          esse. Enim dignissimos quasi est molestias animi, ipsum veniam
+          voluptatum tenetur amet placeat adipisci cupiditate, architecto sit
+          iste debitis! Blanditiis?
+        </p>
+      </div>
     </>
   );
 }

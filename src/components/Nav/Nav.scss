@@ -14,10 +14,14 @@ body {
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
   margin-bottom: 2rem;
-
   border-bottom: 1px solid $grey;
   position: relative;
   z-index: 99;
+
+  @include tablet-small {
+    display: flex;
+    justify-content: center;
+  }
 
   &__title {
     text-transform: uppercase;
@@ -41,23 +45,28 @@ body {
     width: 25px;
   }
 
-  &__menu-wrapper {
-    height: 100vh;
-    opacity: 0;
-    position: absolute; //  absolute to ensure it can stack above other content
-    top: 18%; // Position it just below the nav
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    transition: opacity 0.7s ease-in-out; // Apply transition to height and opacity
-    z-index: 1000; // Ensure it stacks above other elements
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-    background-color: $dark;
-  }
+  @include tablet-small {
+    &__list {
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      width: 100%;
+    }
 
-  &__menu-wrapper.open {
-    opacity: 1;
+    &__list-item {
+      @include t-p1;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__larger-wrapper {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
   }
 }
 
