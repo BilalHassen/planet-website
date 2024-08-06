@@ -1,5 +1,6 @@
 @use "../partials/text" as *;
-
+@use "../partials/variables" as *;
+@use "../partials/mixins" as *;
 /* Apply a consistent box-sizing model */
 *,
 *::before,
@@ -48,6 +49,7 @@ p {
 ul,
 ol {
   list-style: none;
+  font-family: "Antonio";
 }
 
 /* Remove quotes from blockquote and q elements */
@@ -64,19 +66,26 @@ table {
 
 /* Reset font sizes and line heights */
 body {
-  font-size: 100%; /* Ensure font size is consistent across browsers */
   line-height: 1.5;
+  height: 100vh;
+
+  background-color: $dark;
+  color: white;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 /* Ensure images and media are responsive */
-img,
-video,
-canvas,
-svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+// img,
+// video,
+// canvas,
+// svg {
+//   max-width: 100%;
+//   height: auto;
+//   display: block;
+// }
 
 /* Reset form elements */
 input,
