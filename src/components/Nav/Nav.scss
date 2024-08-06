@@ -28,6 +28,8 @@ body {
   @include tablet-small {
     display: flex;
     justify-content: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   @include desktop-small {
