@@ -1,6 +1,5 @@
 import "./NavMenu.scss";
-import earth from "../../../public/images/planet-earth.svg";
-import arrow from "../../../public/images/icon-chevron.svg";
+import arrow from "../../assets/images/icon-chevron.svg";
 
 export default function NavMenu({ data }) {
   console.log(typeof data.color);

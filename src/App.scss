@@ -15,4 +15,9 @@
     padding-left: 3rem;
     padding-right: 3rem;
   }
+
+  @include tablet-small {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
