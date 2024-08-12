@@ -10,6 +10,10 @@
     padding-bottom: 1.6rem;
   }
 
+  &__menu-close {
+    display: none;
+  }
+
   &__icon-name {
     display: flex;
     align-items: center;

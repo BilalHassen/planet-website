@@ -67,7 +67,12 @@ export default function Nav() {
         {isActive
           ? planetData[0].map((data) => {
               return (
-                <NavMenu key={data.name} images={data.images} data={data} />
+                <NavMenu
+                  key={data.name}
+                  images={data.images}
+                  data={data}
+                  isActive={handleNav}
+                />
               );
             })
           : null}
