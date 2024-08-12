@@ -6,38 +6,21 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import NavMenu from "../NavMenu/NavMenu";
 import planetData from "../../data/data";
 import { useState, useEffect } from "react";
+import { checkScreenSize, handleScreenResize } from "../../utils/screenSize"; // Import your utility functions
 
 export default function Nav() {
   const [screenSize, setScreenSize] = useState(checkScreenSize());
 
-  console.log(screenSize);
-  function checkScreenSize() {
-    if (window.innerWidth >= 768 && window.innerWidth < 1366) {
-      return "tablet";
-    } else if (window.innerWidth >= 1366) {
-      return "desktop";
-    }
-
-    return "mobile";
-  }
-
   useEffect(() => {
-    const handleScreenSize = () => {
-      setScreenSize(checkScreenSize());
-    };
+    const cleanup = handleScreenResize(setScreenSize);
 
-    window.addEventListener("resize", handleScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", handleScreenSize);
-    };
-  }, [window.innerWidth]);
+    return cleanup; // Cleanup the event listener on unmount
+  }, []);
 
   useEffect(() => {
     console.log(screenSize);
   }, [screenSize]);
 
-  console.log(planetData);
   const [isActive, setIsActive] = useState(false);
 
   const handleNav = () => {
@@ -66,7 +49,11 @@ export default function Nav() {
           <nav className="nav">
             <ul className="nav__list">
               {planetData[0].map((data) => {
-                return <li className="nav__list-item">{data.name}</li>;
+                return (
+                  <li key={data.name} className="nav__list-item">
+                    {data.name}
+                  </li>
+                );
               })}
             </ul>
           </nav>
@@ -77,7 +64,7 @@ export default function Nav() {
         {isActive
           ? planetData[0].map((data) => {
               return (
-                <NavMenu key={data.index} images={data.images} data={data} />
+                <NavMenu key={data.name} images={data.images} data={data} />
               );
             })
           : null}

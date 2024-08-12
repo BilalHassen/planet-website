@@ -15,7 +15,6 @@ body {
   padding-bottom: 1.6rem;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
-  margin-bottom: 2rem;
   border-bottom: 1px solid $grey;
   position: relative;
   z-index: 99;
@@ -116,6 +115,10 @@ body {
       }
     }
   }
+}
+
+.close {
+  display: none;
 }
 
 .nav__menu:last-child {

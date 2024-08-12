@@ -100,17 +100,6 @@ button {
   outline: none;
 }
 
-/* Buttons */
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  font: inherit;
-}
-
 /* Remove default styling for links */
 a {
   color: inherit;
