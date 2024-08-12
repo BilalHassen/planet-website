@@ -23,7 +23,7 @@ export default function NavMenu({ index, data, isActive }) {
           <h2 className="nav__planet-name">{data.name}</h2>
         </div>
 
-        <Link to={`planet/${index}`} onClick={isClicked}>
+        <Link to={`/planet/${index}`} onClick={isClicked}>
           <img className="nav__arrow-icon" src={arrow} alt="arrow"></img>
         </Link>
       </div>
