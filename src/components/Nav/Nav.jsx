@@ -7,6 +7,7 @@ import NavMenu from "../NavMenu/NavMenu";
 import planetData from "../../data/data";
 import { useState, useEffect } from "react";
 import { checkScreenSize, handleScreenResize } from "../../utils/screenSize"; // Import your utility functions
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   const [screenSize, setScreenSize] = useState(checkScreenSize());
@@ -50,9 +51,11 @@ export default function Nav() {
             <ul className="nav__list">
               {planetData[0].map((data) => {
                 return (
-                  <li key={data.name} className="nav__list-item">
-                    {data.name}
-                  </li>
+                  <Link to={`/planet/${data.name}`}>
+                    <li key={data.name} className="nav__list-item">
+                      {data.name}
+                    </li>
+                  </Link>
                 );
               })}
             </ul>
