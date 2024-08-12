@@ -18,9 +18,9 @@ export default function Nav() {
     return cleanup; // Cleanup the event listener on unmount
   }, []);
 
-  useEffect(() => {
-    console.log(screenSize);
-  }, [screenSize]);
+  // useEffect(() => {
+  //   console.log(screenSize);
+  // }, [screenSize]);
 
   const [isActive, setIsActive] = useState(false);
 
@@ -28,9 +28,9 @@ export default function Nav() {
     setIsActive(!isActive);
   };
 
-  useEffect(() => {
-    console.log(isActive);
-  }, [isActive]);
+  // useEffect(() => {
+  //   console.log(isActive);
+  // }, [isActive]);
 
   return (
     <>
@@ -49,9 +49,10 @@ export default function Nav() {
           <h1 className="nav__title">the planets</h1>
           <nav className="nav">
             <ul className="nav__list">
-              {planetData[0].map((data) => {
+              {planetData[0].map((data, index) => {
+                console.log(index);
                 return (
-                  <Link to={`/planet/${data.name}`}>
+                  <Link to={`/planet/${index}`}>
                     <li key={data.name} className="nav__list-item">
                       {data.name}
                     </li>
@@ -65,9 +66,10 @@ export default function Nav() {
 
       <div className={`nav__menu-wrapper ${isActive ? "open" : "close"}`}>
         {isActive
-          ? planetData[0].map((data) => {
+          ? planetData[0].map((data, index) => {
               return (
                 <NavMenu
+                  index={index}
                   key={data.name}
                   images={data.images}
                   data={data}

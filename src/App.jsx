@@ -10,7 +10,7 @@ function App() {
       <div className="wrapper">
         <Routes>
           <Route path="/" element={<PlanetsPage />} />
-          <Route path="/planet/:name" element={<PlanetsPage />} />
+          <Route path="/planet/:index" element={<PlanetsPage />} />
         </Routes>
       </div>
     </Router>
