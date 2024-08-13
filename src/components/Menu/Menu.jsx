@@ -2,7 +2,7 @@ import "./Menu.scss";
 import { checkScreenSize, handleScreenResize } from "../../utils/screenSize"; // Import your utility functions
 import { useState, useEffect } from "react";
 
-export default function Menu() {
+export default function Menu({ selectedInfo }) {
   const [screenSize, setScreenSize] = useState(checkScreenSize());
 
   useEffect(() => {
@@ -18,6 +18,11 @@ export default function Menu() {
     { text: "surface", number: "03" },
   ];
 
+  const handleClick = (index) => {
+    console.log(index);
+    selectedInfo(index);
+  };
+
   return (
     <>
       {/*map over the menuitems array give the class menu__item.text for both mobile and larger 
@@ -25,7 +30,11 @@ export default function Menu() {
     */}
       <div className="menu">
         {menuItems.map((item, index) => (
-          <button key={index} className={`menu__${item.text}`}>
+          <button
+            key={index}
+            className={`menu__${item.text}`}
+            onClick={() => handleClick(index)}
+          >
             {screenSize !== "mobile" && <span>{item.number}</span>} {item.text}
           </button>
         ))}

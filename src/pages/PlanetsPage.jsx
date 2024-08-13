@@ -11,6 +11,7 @@ export default function PlanetsPage() {
 
   const [planetData, setPlanetData] = useState(planetsData[0][0]);
   const [infoArray, setInfoArray] = useState([]);
+  const [selectedInfoState, setSelectedInfoState] = useState("");
 
   useEffect(() => {
     if (index === undefined) {
@@ -38,13 +39,33 @@ export default function PlanetsPage() {
     }
   }, [planetData]);
 
+  const selectedInfo = (index) => {
+    if (index === 1) {
+      setSelectedInfoState(
+        <p className="planets__structure">{planetData.structure.content}</p>
+      );
+    } else if (index === 2) {
+      setSelectedInfoState(
+        <p className="planets__overview">{planetData.overview.content}</p>
+      );
+    } else {
+      setSelectedInfoState(
+        <p className="planets__geology">{planetData.geology.content}</p>
+      );
+    }
+  };
+
   return (
     <>
-      <Menu />
+      <Menu selectedInfo={selectedInfo} />
       <div className="planets">
         <img className="planets__img" src={planetData.images.planet}></img>
         <h1 className="planets__name">{planetData.name}</h1>
-        <p className="planets__geology">{planetData.geology.content}</p>
+        {selectedInfoState === "" ? (
+          <p className="planets__geology">{planetData.geology.content}</p>
+        ) : (
+          selectedInfoState
+        )}
         <p className="planets__link">
           Source:
           <a
