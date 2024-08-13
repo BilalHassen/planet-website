@@ -1,0 +1,43 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/text" as *;
+
+.planets {
+  &__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__rotation-box,
+  &__revolution-box,
+  &__radius-box,
+  &__temp-box {
+    border: 1px solid grey;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    height: 4rem;
+    align-items: center;
+  }
+
+  &__rotation-text,
+  &__revolution-text,
+  &__radius-text,
+  &__temp-text {
+    @include mp-2;
+    font-family: "Antonio";
+    color: $grey;
+    text-transform: uppercase;
+  }
+
+  &__rotation,
+  &__radius,
+  &__average-temp,
+  &__revolution {
+    font-size: 1.6rem;
+  }
+}
