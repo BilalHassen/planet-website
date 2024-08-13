@@ -1,4 +1,35 @@
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/text" as *;
+@use "../styles/partials/global" as *;
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/text" as *;
+
+.planets {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__img {
+    width: 100px;
+    height: 100px;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+
+  &__geology {
+    text-align: center;
+    font-family: "LeagueSpartan";
+    @include mp-2;
+    margin-bottom: 4rem;
+    color: $white;
+    width: 96%;
+  }
+
+  &__name {
+    @include m-h2;
+    margin-bottom: 1.6rem;
+  }
+
+  &__link {
+    margin-bottom: 1.6rem;
+  }
+}

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import planetsData from "../data/data.js";
 import { useEffect, useState, useTransition } from "react";
 import PlanetsInfo from "../components/PlanetsInfo/PlanetsInfo";
+import "./PlanetsPage.scss";
 
 export default function PlanetsPage() {
   let { index } = useParams();
@@ -43,7 +44,17 @@ export default function PlanetsPage() {
       <div className="planets">
         <img className="planets__img" src={planetData.images.planet}></img>
         <h1 className="planets__name">{planetData.name}</h1>
-        <p className="planet__geology">{planetData.geology.content}</p>
+        <p className="planets__geology">{planetData.geology.content}</p>
+        <p className="planets__link">
+          Source:
+          <a
+            href="https://en.wikipedia.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wikipedia
+          </a>
+        </p>
       </div>
       {(() => {
         const filteredData = infoArray
