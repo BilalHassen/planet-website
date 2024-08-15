@@ -4,6 +4,7 @@ import planetsData from "../data/data.js";
 import { useEffect, useState, useTransition } from "react";
 import PlanetsInfo from "../components/PlanetsInfo/PlanetsInfo";
 import "./PlanetsPage.scss";
+import PlanetsMain from "../components/PlanetsMain/PlanetsMain";
 
 export default function PlanetsPage() {
   let { index } = useParams();
@@ -24,7 +25,7 @@ export default function PlanetsPage() {
   useEffect(() => {
     console.log(planetData);
     console.log(index);
-  }, []);
+  }, [planetData]);
 
   useEffect(() => {
     if (planetData) {
@@ -37,46 +38,38 @@ export default function PlanetsPage() {
       }));
       setInfoArray(updatedInfoArray);
     }
-  }, [planetData]);
+  }, [planetData, index]);
 
   const selectedInfo = (index) => {
     if (index === 1) {
-      setSelectedInfoState(
-        <p className="planets__structure">{planetData.structure.content}</p>
-      );
+      setSelectedInfoState({
+        text: (
+          <p className="planets__structure">{planetData.structure.content}</p>
+        ),
+        imgSrc: planetData.images.internal,
+      });
     } else if (index === 2) {
-      setSelectedInfoState(
-        <p className="planets__overview">{planetData.overview.content}</p>
-      );
+      setSelectedInfoState({
+        text: (
+          <p className="planets__overview">{planetData.overview.content}</p>
+        ),
+        imgSrc: planetData.images.geology,
+      });
     } else {
-      setSelectedInfoState(
-        <p className="planets__geology">{planetData.geology.content}</p>
-      );
+      setSelectedInfoState({
+        text: <p className="planets__geology">{planetData.geology.content}</p>,
+        imgSrc: planetData.images.planet,
+      });
     }
   };
 
   return (
     <>
       <Menu selectedInfo={selectedInfo} />
-      <div className="planets">
-        <img className="planets__img" src={planetData.images.planet}></img>
-        <h1 className="planets__name">{planetData.name}</h1>
-        {selectedInfoState === "" ? (
-          <p className="planets__geology">{planetData.geology.content}</p>
-        ) : (
-          selectedInfoState
-        )}
-        <p className="planets__link">
-          Source:
-          <a
-            href="https://en.wikipedia.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Wikipedia
-          </a>
-        </p>
-      </div>
+      <PlanetsMain
+        planetData={planetData}
+        selectedInfoState={selectedInfoState}
+      />
       {(() => {
         const filteredData = infoArray
           .filter((data) => {
