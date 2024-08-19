@@ -5,9 +5,20 @@
 
 .menu {
   display: flex;
-  justify-content: space-between;
-  margin-top: 1.6rem;
-  padding-bottom: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  gap: 4rem;
+
+  &__button-container {
+    border-bottom: 2px solid green;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: auto;
+  }
 
   @include tablet-small {
     flex-direction: column;
@@ -18,22 +29,17 @@
   &__overview,
   &__structure,
   &__surface {
+    all: unset;
+    cursor: pointer;
+    display: inline-block; //allows me to add margins and paddings to element
+    outline: none; // Removes the blue outline box on focus
+    font-family: "LeagueSpartan";
+    width: auto;
+    font-size: 1.3rem;
     text-transform: uppercase;
-    @include mp-2;
+    text-align: center;
     margin: 0;
     padding: 0;
-    border: none;
-    background: none;
-    color: inherit;
-    font: inherit;
-    text-align: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none; /* Remove focus outline (may add custom focus styles instead) */
-    -webkit-appearance: none; /* Remove default styles in WebKit browsers */
-    -moz-appearance: none; /* Remove default styles in Mozilla browsers */
-    appearance: none; /* Remove default styles in modern browsers */
-    font-family: "LeagueSpartan";
 
     @include tablet-small {
       border: 1px solid $grey;

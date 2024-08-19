@@ -30,13 +30,16 @@ export default function Menu({ selectedInfo }) {
     */}
       <div className="menu">
         {menuItems.map((item, index) => (
-          <button
-            key={index}
-            className={`menu__${item.text}`}
-            onClick={() => handleClick(index)}
-          >
-            {screenSize !== "mobile" && <span>{item.number}</span>} {item.text}
-          </button>
+          <div className="menu__button-container">
+            <button
+              key={index}
+              className={`menu__${item.text}`}
+              onClick={() => handleClick(index)}
+            >
+              {screenSize !== "mobile" && <span>{item.number}</span>}{" "}
+              {item.text}
+            </button>
+          </div>
         ))}
       </div>
       {screenSize === "mobile" ? <hr className="menu__line"></hr> : null}
