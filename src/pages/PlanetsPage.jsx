@@ -23,8 +23,8 @@ export default function PlanetsPage() {
   }, [index]);
 
   useEffect(() => {
-    console.log(planetData);
-    console.log(index);
+    // console.log(planetData);
+    // console.log(index);
   }, [planetData]);
 
   useEffect(() => {
@@ -48,6 +48,7 @@ export default function PlanetsPage() {
         ),
         imgSrc: planetData.images.internal,
       });
+      return index;
     } else if (index === 2) {
       setSelectedInfoState({
         text: (
@@ -55,17 +56,19 @@ export default function PlanetsPage() {
         ),
         imgSrc: planetData.images.geology,
       });
+      return index;
     } else {
       setSelectedInfoState({
         text: <p className="planets__geology">{planetData.geology.content}</p>,
         imgSrc: planetData.images.planet,
       });
+      return index;
     }
   };
 
   return (
     <>
-      <Menu selectedInfo={selectedInfo} />
+      <Menu selectedInfo={selectedInfo} planetColor={planetData.color} />
       <PlanetsMain
         planetData={planetData}
         selectedInfoState={selectedInfoState}

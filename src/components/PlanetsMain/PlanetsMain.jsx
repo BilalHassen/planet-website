@@ -1,5 +1,5 @@
 export default function PlanetsMain({ planetData, selectedInfoState }) {
-  console.log(selectedInfoState.text);
+  // console.log(selectedInfoState.text);
   return (
     <>
       <div className="planets">

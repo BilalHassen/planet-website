@@ -2,8 +2,12 @@ import "./Menu.scss";
 import { checkScreenSize, handleScreenResize } from "../../utils/screenSize"; // Import your utility functions
 import { useState, useEffect } from "react";
 
-export default function Menu({ selectedInfo }) {
+export default function Menu({ selectedInfo, planetColor }) {
   const [screenSize, setScreenSize] = useState(checkScreenSize());
+  const [activeButton, setActiveButton] = useState();
+  const [active, setActive] = useState(false);
+
+  console.log(planetColor);
 
   useEffect(() => {
     const cleanup = handleScreenResize(setScreenSize);
@@ -18,10 +22,13 @@ export default function Menu({ selectedInfo }) {
     { text: "surface", number: "03" },
   ];
 
-  const handleClick = (index) => {
-    console.log(index);
+  function handleClick(index) {
     selectedInfo(index);
-  };
+    const selectedIndex = selectedInfo(index);
+    if (selectedIndex === index) {
+      setActive(index);
+    }
+  }
 
   return (
     <>
@@ -30,7 +37,13 @@ export default function Menu({ selectedInfo }) {
     */}
       <div className="menu">
         {menuItems.map((item, index) => (
-          <div className="menu__button-container">
+          <div
+            className="menu__button-container"
+            style={{
+              borderBottom:
+                active === index ? `2px solid ${planetColor}` : null,
+            }}
+          >
             <button
               key={index}
               className={`menu__${item.text}`}
