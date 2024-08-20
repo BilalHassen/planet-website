@@ -68,10 +68,11 @@ export default function PlanetsPage() {
 
   return (
     <>
-      <Menu selectedInfo={selectedInfo} planetColor={planetData.color} />
       <PlanetsMain
         planetData={planetData}
         selectedInfoState={selectedInfoState}
+        selectedInfo={selectedInfo}
+        planetColor={planetData.color}
       />
       {(() => {
         const filteredData = infoArray

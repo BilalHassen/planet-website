@@ -10,6 +10,10 @@
   height: 4rem;
   gap: 4rem;
 
+  @include tablet-small {
+    height: auto;
+  }
+
   &__button-container {
     height: 100%;
     display: inline-flex;

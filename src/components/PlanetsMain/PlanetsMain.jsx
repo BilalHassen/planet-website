@@ -1,8 +1,27 @@
-export default function PlanetsMain({ planetData, selectedInfoState }) {
-  // console.log(selectedInfoState.text);
+import Menu from "../Menu/Menu";
+import { checkScreenSize, handleScreenResize } from "../../utils/screenSize";
+import { useEffect, useState } from "react";
+export default function PlanetsMain({
+  planetData,
+  selectedInfoState,
+  selectedInfo,
+  planetColor,
+}) {
+  const [screenSize, setScreenSize] = useState(checkScreenSize());
+
+  useEffect(() => {
+    const cleanup = handleScreenResize(setScreenSize);
+
+    return cleanup; // Cleanup the event listener on unmount
+  }, []);
+
   return (
     <>
       <div className="planets">
+        {screenSize === "mobile" ? (
+          <Menu selectedInfo={selectedInfo} planetColor={planetData.color} />
+        ) : null}
+
         <img
           className="planets__img"
           src={
@@ -28,6 +47,9 @@ export default function PlanetsMain({ planetData, selectedInfoState }) {
           </a>
         </p>
       </div>
+      {screenSize === "tablet" || screenSize === "desktop" ? (
+        <Menu selectedInfo={selectedInfo} planetColor={planetData.color} />
+      ) : null}
     </>
   );
 }
