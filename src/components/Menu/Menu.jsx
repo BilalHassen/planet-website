@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 export default function Menu({ selectedInfo, planetColor }) {
   const [screenSize, setScreenSize] = useState(checkScreenSize());
   const [activeButton, setActiveButton] = useState();
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(null);
 
-  console.log(planetColor);
+  console.log(screenSize);
 
   useEffect(() => {
     const cleanup = handleScreenResize(setScreenSize);
@@ -24,7 +24,9 @@ export default function Menu({ selectedInfo, planetColor }) {
 
   function handleClick(index) {
     selectedInfo(index);
+    // selected index is the index returned from selectedInfo function
     const selectedIndex = selectedInfo(index);
+    // check if the index of the button is equal to the index returned
     if (selectedIndex === index) {
       setActive(index);
     }
@@ -40,8 +42,21 @@ export default function Menu({ selectedInfo, planetColor }) {
           <div
             className="menu__button-container"
             style={{
+              // check if the active state is === to the index of the button clicked
               borderBottom:
-                active === index ? `2px solid ${planetColor}` : null,
+                active === index && screenSize === "mobile"
+                  ? `2px solid ${planetColor}`
+                  : null,
+
+              backgroundColor:
+                active === index && screenSize === "tablet"
+                  ? `${planetColor}`
+                  : null,
+
+              border:
+                screenSize !== "mobile" && active !== index
+                  ? "1px solid grey"
+                  : "none", // No border for mobile, only border-bottom
             }}
           >
             <button
