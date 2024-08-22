@@ -15,11 +15,7 @@ export default function PlanetsPage() {
   const [selectedInfoState, setSelectedInfoState] = useState("");
 
   useEffect(() => {
-    if (index === undefined) {
-      setPlanetData(planetsData[0][0]);
-    } else {
-      setPlanetData(planetsData[0][index]);
-    }
+    setPlanetData(planetsData[0][index] || planetsData[0][0]);
   }, [index]);
 
   useEffect(() => {
@@ -27,6 +23,8 @@ export default function PlanetsPage() {
     // console.log(index);
   }, [planetData]);
 
+  // function to display the correct planet info in boxes
+  //
   useEffect(() => {
     if (planetData) {
       const updatedInfoArray = planetsData[0].map((data) => ({
@@ -40,6 +38,7 @@ export default function PlanetsPage() {
     }
   }, [planetData, index]);
 
+  // function to display correct information based on user selected info tab
   const selectedInfo = (index) => {
     if (index === 1) {
       setSelectedInfoState({
@@ -66,8 +65,11 @@ export default function PlanetsPage() {
     }
   };
 
+  // call the selectedinfo function whenever planet data is changed
+  // if non of the indexes match the function the last else block runs
+  // and updates the ui with the default info about a selected planet
   useEffect(() => {
-    selectedInfo();
+    selectedInfo(0);
   }, [planetData]);
 
   return (
