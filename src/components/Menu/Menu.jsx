@@ -1,13 +1,15 @@
 import "./Menu.scss";
 import { checkScreenSize, handleScreenResize } from "../../utils/screenSize"; // Import your utility functions
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-export default function Menu({ selectedInfo, planetColor }) {
+export default function Menu({ selectedInfo, planetColor, paramsIndex }) {
   const [screenSize, setScreenSize] = useState(checkScreenSize());
   const [activeButton, setActiveButton] = useState();
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState("");
 
   console.log(screenSize);
+  console.log("paramsIndex from menu:", paramsIndex);
 
   useEffect(() => {
     const cleanup = handleScreenResize(setScreenSize);
@@ -32,43 +34,51 @@ export default function Menu({ selectedInfo, planetColor }) {
     }
   }
 
+  useEffect(() => {
+    setActive(null);
+  }, [paramsIndex]);
+
   return (
     <>
       {/*map over the menuitems array give the class menu__item.text for both mobile and larger 
-    then check if screen size !== mobile dont render the spam with the numbers
+    then check if screen size !== mobile dont render the span with the numbers
     */}
       <div className="menu">
-        {menuItems.map((item, index) => (
-          <div
-            className="menu__button-container"
-            style={{
-              // check if the active state is === to the index of the button clicked
-              borderBottom:
-                active === index && screenSize === "mobile"
-                  ? `2px solid ${planetColor}`
-                  : null,
+        {menuItems.map((item, index) => {
+          return (
+            <div
+              className="menu__button-container"
+              style={{
+                // check if the active state is === to the index of the button clicked
+                borderBottom:
+                  (active === index && screenSize === "mobile") ||
+                  (active === null && screenSize === "mobile" && index === 0)
+                    ? `2px solid ${planetColor}`
+                    : null,
 
-              backgroundColor:
-                active === index && screenSize === "tablet"
-                  ? `${planetColor}`
-                  : null,
+                backgroundColor:
+                  (active === index && screenSize === "tablet") ||
+                  (active === null && screenSize === "tablet" && index === 0)
+                    ? `${planetColor}`
+                    : null,
 
-              border:
-                screenSize !== "mobile" && active !== index
-                  ? "1px solid grey"
-                  : "none", // No border for mobile, only border-bottom
-            }}
-          >
-            <button
-              key={index}
-              className={`menu__${item.text}`}
-              onClick={() => handleClick(index)}
+                border:
+                  screenSize !== "mobile" && active !== index
+                    ? "1px solid grey"
+                    : "none", // No border for mobile, only border-bottom
+              }}
             >
-              {screenSize !== "mobile" && <span>{item.number}</span>}{" "}
-              {item.text}
-            </button>
-          </div>
-        ))}
+              <button
+                key={index}
+                className={`menu__${item.text}`}
+                onClick={() => handleClick(index)}
+              >
+                {screenSize !== "mobile" && <span>{item.number}</span>}{" "}
+                {item.text}
+              </button>
+            </div>
+          );
+        })}
       </div>
       {screenSize === "mobile" ? <hr className="menu__line"></hr> : null}
     </>

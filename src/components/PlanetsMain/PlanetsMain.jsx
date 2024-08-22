@@ -17,16 +17,20 @@ export default function PlanetsMain({
     return cleanup; // Cleanup the event listener on unmount
   }, []);
 
-  useEffect(() => {
-    console.log(planetData);
-    console.log(selectedInfoState);
-  }, [planetData]);
+  // useEffect(() => {
+  //   console.log(planetData);
+  //   console.log(selectedInfoState);
+  // }, [planetData]);
 
   return (
     <>
       <div className="planets">
         {screenSize === "mobile" ? (
-          <Menu selectedInfo={selectedInfo} planetColor={planetData.color} />
+          <Menu
+            selectedInfo={selectedInfo}
+            planetColor={planetData.color}
+            paramsIndex={index}
+          />
         ) : null}
 
         <img
@@ -57,7 +61,11 @@ export default function PlanetsMain({
             </p>
           </div>
           {screenSize === "tablet" || screenSize === "desktop" ? (
-            <Menu selectedInfo={selectedInfo} planetColor={planetData.color} />
+            <Menu
+              selectedInfo={selectedInfo}
+              planetColor={planetData.color}
+              paramsIndex={index}
+            />
           ) : null}
         </div>
       </div>
