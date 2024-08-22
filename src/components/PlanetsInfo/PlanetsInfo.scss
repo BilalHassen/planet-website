@@ -8,6 +8,10 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include tablet-small {
+      flex-direction: row;
+    }
   }
 
   &__rotation-box,
@@ -22,6 +26,13 @@
     padding-right: 1.6rem;
     height: 4rem;
     align-items: center;
+
+    @include tablet-small {
+      height: 8rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__rotation-text,
@@ -32,6 +43,11 @@
     font-family: "Antonio";
     color: $grey;
     text-transform: uppercase;
+
+    @include tablet-small {
+      align-self: flex-start;
+      font-size: 8px;
+    }
   }
 
   &__rotation,
@@ -39,5 +55,9 @@
   &__average-temp,
   &__revolution {
     font-size: 1.6rem;
+    @include tablet-small {
+      align-self: flex-start;
+      @include t-h3;
+    }
   }
 }

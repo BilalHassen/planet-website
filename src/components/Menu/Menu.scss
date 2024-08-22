@@ -23,11 +23,17 @@
     justify-content: center;
     flex: 1;
     width: auto;
+
+    @include tablet-small {
+      display: flex;
+      justify-content: start;
+      padding-left: 2rem;
+    }
   }
 
   &__overview,
-  &__structure,
-  &__surface {
+  &__internal-structure,
+  &__surface-geology {
     all: unset;
     cursor: pointer;
     display: inline-block; //allows me to add margins and paddings to element
@@ -42,6 +48,9 @@
 
     @include tablet-small {
       height: 4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
   }
 
@@ -56,6 +65,7 @@
     margin-bottom: 0rem;
   }
 }
-.menu__button-active {
-  background-color: red;
+
+span {
+  color: $grey;
 }
