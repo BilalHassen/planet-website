@@ -8,14 +8,9 @@
   align-items: center;
   flex-direction: column;
 
-  &__img {
-    width: 100px;
-    height: 100px;
-    margin-top: 8rem;
-    margin-bottom: 8rem;
-  }
-
-  &__geology {
+  &__geology,
+  &__structure,
+  &__overview {
     text-align: center;
     font-family: "LeagueSpartan";
     @include mp-2;

@@ -66,6 +66,10 @@ export default function PlanetsPage() {
     }
   };
 
+  useEffect(() => {
+    selectedInfo();
+  }, [planetData]);
+
   return (
     <>
       <PlanetsMain
@@ -73,6 +77,7 @@ export default function PlanetsPage() {
         selectedInfoState={selectedInfoState}
         selectedInfo={selectedInfo}
         planetColor={planetData.color}
+        index={index}
       />
       {(() => {
         const filteredData = infoArray
