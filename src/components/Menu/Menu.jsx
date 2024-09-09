@@ -19,9 +19,24 @@ export default function Menu({ selectedInfo, planetColor, paramsIndex }) {
 
   // object for menu buttons
   const menuItems = [
-    { text: "overview", number: "01", class: "overview" },
-    { text: "internal structure", number: "02", class: "internal-structure" },
-    { text: "surface geology", number: "03", class: "surface-geology" },
+    {
+      text: "overview",
+      mobileText: "overview",
+      number: "01",
+      class: "overview",
+    },
+    {
+      text: "internal structure",
+      mobileText: "structure",
+      number: "02",
+      class: "internal-structure",
+    },
+    {
+      text: "surface geology",
+      mobileText: "surface",
+      number: "03",
+      class: "surface-geology",
+    },
   ];
 
   function handleClick(index) {
@@ -74,7 +89,7 @@ export default function Menu({ selectedInfo, planetColor, paramsIndex }) {
                 onClick={() => handleClick(index)}
               >
                 {screenSize !== "mobile" && <span>{item.number}</span>}{" "}
-                {item.text}
+                {screenSize !== "mobile" ? item.text : item.mobileText}
               </button>
             </div>
           );
