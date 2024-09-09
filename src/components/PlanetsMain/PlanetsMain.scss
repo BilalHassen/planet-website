@@ -53,8 +53,8 @@
     }
 
     @include desktop-small {
-      width: 300px;
-      height: 300px;
+      width: 400px;
+      height: 400px;
     }
   }
 
@@ -62,6 +62,10 @@
     text-transform: uppercase;
     @include tablet-small {
       @include t-h2;
+
+      @include desktop-small {
+        font-size: 6rem;
+      }
     }
   }
 
@@ -75,6 +79,10 @@
       margin-bottom: 4rem;
       color: $white;
       width: 96%;
+
+      @include desktop-small {
+        font-size: 1.8rem;
+      }
     }
   }
 
@@ -87,6 +95,12 @@
 
     @include desktop-small {
       width: 100%;
+    }
+  }
+
+  &__link {
+    @include desktop-small {
+      font-size: 1.6rem;
     }
   }
 }

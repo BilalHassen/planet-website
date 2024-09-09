@@ -73,9 +73,10 @@ export default function Menu({ selectedInfo, planetColor, paramsIndex }) {
 
                 backgroundColor:
                   (active === index && screenSize === "tablet") ||
+                  (active === index && screenSize === "desktop") ||
                   (active === null && screenSize === "tablet" && index === 0)
                     ? `${planetColor}`
-                    : null,
+                    : "transparent",
 
                 border:
                   screenSize !== "mobile" && active !== index
