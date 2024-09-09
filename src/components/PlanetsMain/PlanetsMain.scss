@@ -6,13 +6,36 @@
 .planets {
   display: flex;
 
+  @include desktop-small {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
   &__container {
     text-align: center;
+
     @include tablet-small {
       display: flex;
-      gap: 6rem;
       text-align: start;
       align-items: center;
+    }
+
+    @include desktop-small {
+      flex-direction: column;
+      width: 30%;
+      align-items: flex-start;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+      gap: 2rem;
+    }
+  }
+
+  @include desktop-small {
+    &__img-container {
+      width: 60%;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -27,6 +50,11 @@
       height: 250px;
       margin-top: 12rem;
       margin-bottom: 12rem;
+    }
+
+    @include desktop-small {
+      width: 300px;
+      height: 300px;
     }
   }
 
@@ -55,6 +83,10 @@
 
     @include tablet-small {
       width: 70%;
+    }
+
+    @include desktop-small {
+      width: 100%;
     }
   }
 }

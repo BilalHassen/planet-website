@@ -33,14 +33,16 @@ export default function PlanetsMain({
           />
         ) : null}
 
-        <img
-          className="planets__img"
-          src={
-            !selectedInfoState.imgSrc
-              ? planetData.images.planet
-              : selectedInfoState.imgSrc
-          }
-        ></img>
+        <div className="planets__img-container">
+          <img
+            className="planets__img"
+            src={
+              !selectedInfoState.imgSrc
+                ? planetData.images.planet
+                : selectedInfoState.imgSrc
+            }
+          ></img>
+        </div>
         <div className="planets__container">
           <div className="planets__text-container">
             <h1 className="planets__name">{planetData.name}</h1>

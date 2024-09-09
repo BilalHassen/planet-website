@@ -68,9 +68,25 @@ table {
 body {
   line-height: 1.5;
   height: 100vh;
-
+  // background-image: url(../../../public/images/grey-polka-dot-background.png);
   background-color: $dark;
   color: white;
+  background-size: contain; /* Or 'contain' */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../public/images/grey-polka-dot-background.png);
+  background-size: 70%;
+  background-position: center;
+  opacity: 0.1; /* Adjust opacity for transparency */
+  mix-blend-mode: lighten; /* Choose blend mode to control transparency and blending */
+  z-index: -1; /* Keep it behind the text */
 }
 
 html {
