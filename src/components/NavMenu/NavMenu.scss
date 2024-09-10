@@ -11,7 +11,8 @@
   }
 
   &__menu-close {
-    display: none;
+    height: 0; // Shrinks to 0 height on close
+    opacity: 0; // Fade out on close
   }
 
   &__icon-name {
@@ -37,25 +38,23 @@
   }
 
   &__menu-wrapper {
-    height: 100vh;
-    opacity: 0;
-    position: absolute; //  absolute to ensure it can stack above other content
-    top: 18%; // Position it just below the nav
+    height: 0; // Menu starts closed
+    opacity: 0; // Invisible at first
+    overflow: hidden; // Prevent content from spilling out
+    transition: height 0.7s ease-in-out, opacity 0.7s ease-in-out; // Smooth transition for height and opacity
+    position: absolute;
+    top: 18%;
     left: 0;
     right: 0;
-    overflow: hidden;
-    transition: opacity 0.7s ease-in-out; // Apply transition to height and opacity
-    z-index: 1000; // Ensure it stacks above other elements
     background-color: $dark;
-
-    // @include mobile-medium {
-    //   padding-left: 2rem;
-    //   padding-right: 2rem;
-    // }
+    z-index: 1000;
   }
 
   &__menu-wrapper.open {
-    opacity: 1;
+    height: 100vh; // Full height when menu is open
+    opacity: 1; // Fully visible
+    position: fixed; // Keep the menu fixed on open
+    top: 10.5%; // Adjust the position when opened
     padding-left: 1.6rem;
     padding-right: 1.6rem;
 

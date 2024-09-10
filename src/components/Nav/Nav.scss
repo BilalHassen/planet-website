@@ -152,7 +152,8 @@ body {
 }
 
 .close {
-  display: none;
+  height: 0; // Shrinks to 0 height on close
+  opacity: 0; // Fade out on close
 }
 
 .nav__menu:last-child {
