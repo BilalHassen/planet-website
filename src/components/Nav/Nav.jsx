@@ -23,14 +23,20 @@ export default function Nav() {
   // }, [screenSize]);
 
   const [isActive, setIsActive] = useState(false);
+  const [selectedPlanet, setSelectedPlanet] = useState(null);
 
   const handleNav = () => {
     setIsActive(!isActive);
   };
 
-  // useEffect(() => {
-  //   console.log(isActive);
-  // }, [isActive]);
+  const handleSelectedPlanet = (name) => {
+    planetData[0].forEach((planet) => {
+      console.log(planet.name === name);
+      if (planet.name === name) {
+        setSelectedPlanet(planet.color);
+      }
+    });
+  };
 
   return (
     <>
@@ -50,10 +56,17 @@ export default function Nav() {
           <nav className="nav">
             <ul className="nav__list">
               {planetData[0].map((data, index) => {
-                console.log(index);
                 return (
                   <Link to={`/planet/${index}`}>
-                    <li key={data.name} className="nav__list-item">
+                    <li
+                      key={data.name}
+                      className="nav__list-item"
+                      onClick={() => handleSelectedPlanet(data.name)}
+                      style={{
+                        color:
+                          selectedPlanet === data.color ? `${data.color}` : "",
+                      }}
+                    >
                       {data.name}
                     </li>
                   </Link>
