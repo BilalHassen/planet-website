@@ -1,0 +1,30 @@
+@use "../styles/partials/global" as *;
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/text" as *;
+
+.planets {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__geology,
+  &__structure,
+  &__overview {
+    text-align: center;
+    font-family: "LeagueSpartan";
+    @include mp-2;
+    margin-bottom: 4rem;
+    color: $white;
+    width: 96%;
+  }
+
+  &__name {
+    @include m-h2;
+    margin-bottom: 1.6rem;
+  }
+
+  &__link {
+    margin-bottom: 1.6rem;
+  }
+}

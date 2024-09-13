@@ -1,21 +1,19 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Nav from "./components/Nav/Nav";
+import PlanetsPage from "./pages/PlanetsPage";
 
 function App() {
   return (
-    <>
+    <Router>
       <Nav />
       <div className="wrapper">
-        <h1>VENUS</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, sint
-          esse. Enim dignissimos quasi est molestias animi, ipsum veniam
-          voluptatum tenetur amet placeat adipisci cupiditate, architecto sit
-          iste debitis! Blanditiis?
-        </p>
+        <Routes>
+          <Route path="/" element={<PlanetsPage />} />
+          <Route path="/planet/:index" element={<PlanetsPage />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
