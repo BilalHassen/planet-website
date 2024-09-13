@@ -10,6 +10,8 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
   }
 
   &__container {
@@ -19,14 +21,22 @@
       display: flex;
       text-align: start;
       align-items: center;
+      gap: 4rem;
+    }
+
+    @include tablet-medium {
+      gap: 8rem;
+    }
+
+    @include tablet-large {
+      gap: 12rem;
     }
 
     @include desktop-small {
       flex-direction: column;
       width: 30%;
       align-items: flex-start;
-      padding-top: 8rem;
-      padding-bottom: 8rem;
+
       gap: 2rem;
     }
   }
@@ -91,6 +101,14 @@
 
     @include tablet-small {
       width: 70%;
+    }
+
+    @include tablet-medium {
+      width: 60%;
+    }
+
+    @include tablet-large {
+      width: 60%;
     }
 
     @include desktop-small {
