@@ -1,0 +1,56 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.nav {
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.1px solid $grey;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  &__icon-name {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__arrow-icon {
+    height: 15px;
+    width: 15px;
+  }
+
+  &__planet-icon {
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+  }
+
+  &__planet-name {
+    @include m-h3;
+    letter-spacing: 0.3rem;
+  }
+
+  &__menu-wrapper {
+    height: 100vh;
+    opacity: 0;
+    position: absolute; //  absolute to ensure it can stack above other content
+    top: 18%; // Position it just below the nav
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    transition: opacity 0.7s ease-in-out; // Apply transition to height and opacity
+    z-index: 1000; // Ensure it stacks above other elements
+    background-color: $dark;
+
+    // @include mobile-medium {
+    //   padding-left: 2rem;
+    //   padding-right: 2rem;
+    // }
+  }
+
+  &__menu-wrapper.open {
+    opacity: 1;
+  }
+}
