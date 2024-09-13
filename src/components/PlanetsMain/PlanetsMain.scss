@@ -1,0 +1,124 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/text" as *;
+
+.planets {
+  display: flex;
+
+  @include desktop-small {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+
+  &__container {
+    text-align: center;
+
+    @include tablet-small {
+      display: flex;
+      text-align: start;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    @include tablet-medium {
+      gap: 8rem;
+    }
+
+    @include tablet-large {
+      gap: 12rem;
+    }
+
+    @include desktop-small {
+      flex-direction: column;
+      width: 30%;
+      align-items: flex-start;
+
+      gap: 2rem;
+    }
+  }
+
+  @include desktop-small {
+    &__img-container {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__img {
+    width: 150px;
+    height: 150px;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+
+    @include tablet-small {
+      width: 250px;
+      height: 250px;
+      margin-top: 12rem;
+      margin-bottom: 12rem;
+    }
+
+    @include desktop-small {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    @include tablet-small {
+      @include t-h2;
+
+      @include desktop-small {
+        font-size: 6rem;
+      }
+    }
+  }
+
+  @include tablet-small {
+    &__geology,
+    &__structure,
+    &__overview {
+      text-align: start;
+      font-family: "LeagueSpartan", sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 4rem;
+      color: $white;
+      width: 96%;
+
+      @include desktop-small {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__text-container {
+    width: 100%;
+
+    @include tablet-small {
+      width: 70%;
+    }
+
+    @include tablet-medium {
+      width: 60%;
+    }
+
+    @include tablet-large {
+      width: 60%;
+    }
+
+    @include desktop-small {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    @include desktop-small {
+      font-size: 1.6rem;
+    }
+  }
+}

@@ -1,8 +1,15 @@
 import "./NavMenu.scss";
-import arrow from "../../assets/images/icon-chevron.svg";
+import arrow from "/images/icon-chevron.svg";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-export default function NavMenu({ data }) {
-  console.log(typeof data.color);
+export default function NavMenu({ index, data, isActive }) {
+  // console.log(typeof data.color);
+
+  const isClicked = (e) => {
+    isActive();
+  };
+
   return (
     <>
       <div className="nav__menu">
@@ -15,7 +22,10 @@ export default function NavMenu({ data }) {
           ></div>
           <h2 className="nav__planet-name">{data.name}</h2>
         </div>
-        <img className="nav__arrow-icon" src={arrow} alt="arrow"></img>
+
+        <Link to={`/planet/${index}`} onClick={isClicked}>
+          <img className="nav__arrow-icon" src={arrow} alt="arrow"></img>
+        </Link>
       </div>
     </>
   );
